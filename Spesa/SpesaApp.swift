@@ -25,7 +25,7 @@ struct SpesaApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SpesaView(isUpdated: false)
         }
         .modelContainer(sharedModelContainer)
     }
