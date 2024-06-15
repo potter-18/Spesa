@@ -10,9 +10,13 @@ import SwiftData
 
 @Model
 final class Item {
-    var timestamp: Date
+    var title: String
+    var amount: Double
+    var isTransaction: String
     
-    init(timestamp: Date) {
-        self.timestamp = timestamp
+    init(title: String, amount: Double, isTransaction: String) {
+        self.title = title
+        self.amount = amount
+        self.isTransaction = isTransaction
     }
 }

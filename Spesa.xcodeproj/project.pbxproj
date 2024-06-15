@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		BC97BD1E2C19DC38000518A4 /* SpesaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC97BD1D2C19DC38000518A4 /* SpesaApp.swift */; };
-		BC97BD202C19DC38000518A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC97BD1F2C19DC38000518A4 /* ContentView.swift */; };
+		BC97BD202C19DC38000518A4 /* SpesaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC97BD1F2C19DC38000518A4 /* SpesaView.swift */; };
 		BC97BD222C19DC38000518A4 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC97BD212C19DC38000518A4 /* Item.swift */; };
 		BC97BD242C19DC39000518A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC97BD232C19DC39000518A4 /* Assets.xcassets */; };
 		BC97BD272C19DC39000518A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC97BD262C19DC39000518A4 /* Preview Assets.xcassets */; };
+		BCFD03ED2C1DE21100E8203D /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFD03EC2C1DE21100E8203D /* AddTransactionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BC97BD1A2C19DC38000518A4 /* Spesa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spesa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC97BD1D2C19DC38000518A4 /* SpesaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpesaApp.swift; sourceTree = "<group>"; };
-		BC97BD1F2C19DC38000518A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BC97BD1F2C19DC38000518A4 /* SpesaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpesaView.swift; sourceTree = "<group>"; };
 		BC97BD212C19DC38000518A4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		BC97BD232C19DC39000518A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC97BD262C19DC39000518A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BCFD03EC2C1DE21100E8203D /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +56,8 @@
 			isa = PBXGroup;
 			children = (
 				BC97BD1D2C19DC38000518A4 /* SpesaApp.swift */,
-				BC97BD1F2C19DC38000518A4 /* ContentView.swift */,
+				BC97BD1F2C19DC38000518A4 /* SpesaView.swift */,
+				BCFD03EC2C1DE21100E8203D /* AddTransactionView.swift */,
 				BC97BD212C19DC38000518A4 /* Item.swift */,
 				BC97BD232C19DC39000518A4 /* Assets.xcassets */,
 				BC97BD252C19DC39000518A4 /* Preview Content */,
@@ -140,7 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC97BD202C19DC38000518A4 /* ContentView.swift in Sources */,
+				BC97BD202C19DC38000518A4 /* SpesaView.swift in Sources */,
+				BCFD03ED2C1DE21100E8203D /* AddTransactionView.swift in Sources */,
 				BC97BD222C19DC38000518A4 /* Item.swift in Sources */,
 				BC97BD1E2C19DC38000518A4 /* SpesaApp.swift in Sources */,
 			);
@@ -291,9 +295,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lavida.Spesa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -320,9 +328,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.lavida.Spesa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
