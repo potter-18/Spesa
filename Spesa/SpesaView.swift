@@ -23,7 +23,10 @@ struct SpesaView: View {
                     Text("Balance: $\(getTotalBalance())").font(.largeTitle).foregroundStyle(.red)
                     List {
                         ForEach(items) { item in
-                            NavigationLink(destination: Text("\(item.title) \nAmount: $\(String(format: "%.2f", item.amount))"), label: {Text("\(item.title) \nAmount: $\(String(format: "%.2f", item.amount))")})
+                            NavigationLink(destination: Text("\(item.transactionOption) \n\(item.title) \nAmount: $\(String(format: "%.2f", item.amount))")
+                                .border(.blue)
+                                .multilineTextAlignment(.center),
+                                           label: {Text("\(item.title) \nAmount: $\(String(format: "%.2f", item.amount))")})
                         }
                         .onDelete(perform: deleteTransaction)
                     }
@@ -47,7 +50,7 @@ struct SpesaView: View {
         var balance = 0.0
         
         for item in items {
-            if item.isTransaction == "Expense" {
+            if item.transactionMode == .Expense {
                 balance -= item.amount
             } else {
                 balance += item.amount

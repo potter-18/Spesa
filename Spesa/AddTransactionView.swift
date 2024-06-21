@@ -8,11 +8,14 @@
 import SwiftUI
 import SwiftData
 
-enum transactionType: String, CaseIterable, Identifiable {
-    case Expense = "Expense"
-    case Income = "Income"
+struct TransactionType {
+    var title: String
+    var tMode: TransactionMode
     
-    var id: String { self.rawValue }
+    init(title: String, tMode: TransactionMode) {
+        self.title = title
+        self.tMode = tMode
+    }
 }
 
 struct AddTransactionView: View {
@@ -20,9 +23,13 @@ struct AddTransactionView: View {
     @Environment (\.modelContext) private var modelContext
     @Query private var items: [Item]
     
+    let AllTransactionOptions: [TransactionType] = [TransactionType(title: "Salary", tMode: .Income), TransactionType(title: "Rembursement", tMode: .Income), TransactionType(title: "Food", tMode: .Expense), TransactionType(title: "Transportation", tMode: .Expense), TransactionType(title: "Grooming", tMode: .Expense), TransactionType(title: "Mobile Phone Recharge", tMode: .Expense)
+    ]
+    
     @State var title: String = ""
     @State var amount: Double = 0.00
-    @State var transType: transactionType = .Expense
+    @State var transType: TransactionType = TransactionType(title: "", tMode: .Income)
+    @State var transactionOptionIndex: Int = 0
     
     @Binding var isUpdated: Bool
 
@@ -32,12 +39,15 @@ var body: some View {
         VStack {
             Text ("Add new transaction").font(.largeTitle).foregroundStyle(.blue)
             Spacer()
-            Picker("Transaction", selection: $transType) {
-                ForEach(transactionType.allCases) { ttype in
-                    Text(ttype.rawValue).tag(ttype)
+            Picker("Transaction", selection: $transactionOptionIndex) {
+                ForEach(AllTransactionOptions.indices, id: \.self) { index in
+                    Text(AllTransactionOptions[index].title).tag(index)
                 }
             }
-            .pickerStyle(.wheel)
+            .pickerStyle(.menu)
+            .onChange(of: transactionOptionIndex, initial: true) {
+                transType = AllTransactionOptions[transactionOptionIndex]
+            }
             
             TextField("Add title", text: $title)
                 .frame(width: 300, height: 50, alignment: .center)
@@ -65,7 +75,7 @@ var body: some View {
 
 private func addAmount() {
     withAnimation {
-        let newItem = Item(title: title, amount: amount, isTransaction: transType.id)
+        let newItem = Item(title: title, amount: amount, transactionMode: transType.tMode, transactionOption: transType.title)
         modelContext.insert(newItem)
     }
 }
