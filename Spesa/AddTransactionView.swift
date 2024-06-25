@@ -23,7 +23,7 @@ struct AddTransactionView: View {
     @Environment (\.modelContext) private var modelContext
     @Query private var items: [Item]
     
-    let AllTransactionOptions: [TransactionType] = [TransactionType(title: "Salary", tMode: .Income), TransactionType(title: "Rembursement", tMode: .Income), TransactionType(title: "Food", tMode: .Expense), TransactionType(title: "Transportation", tMode: .Expense), TransactionType(title: "Grooming", tMode: .Expense), TransactionType(title: "Mobile Phone Recharge", tMode: .Expense)
+    let AllTransactionOptions: [TransactionType] = [TransactionType(title: "Salary", tMode: .Income), TransactionType(title: "Rembursement", tMode: .Income), TransactionType(title: "Food", tMode: .Expense), TransactionType(title: "Transportation", tMode: .Expense), TransactionType(title: "Grooming", tMode: .Expense), TransactionType(title: "Mobile Phone Recharge", tMode: .Expense), TransactionType(title: "Refund", tMode: .Refund)
     ]
     
     @State var title: String = ""
@@ -32,13 +32,17 @@ struct AddTransactionView: View {
     @State var transactionOptionIndex: Int = 0
     
     @Binding var isUpdated: Bool
+    
+    @State var againstID: UUID?
 
 var body: some View {
     NavigationStack {
         
         VStack {
             Text ("Add new transaction").font(.largeTitle).foregroundStyle(.blue)
+           
             Spacer()
+            
             Picker("Transaction", selection: $transactionOptionIndex) {
                 ForEach(AllTransactionOptions.indices, id: \.self) { index in
                     Text(AllTransactionOptions[index].title).tag(index)
@@ -47,6 +51,10 @@ var body: some View {
             .pickerStyle(.menu)
             .onChange(of: transactionOptionIndex, initial: true) {
                 transType = AllTransactionOptions[transactionOptionIndex]
+            }
+ 
+            if (transType.tMode == .Refund) {
+                NavigationLink (destination: DisplayAllTransactionView (againstID: $againstID), label: {Text("Select Transaction against which Refund")})
             }
             
             TextField("Add title", text: $title)
@@ -75,7 +83,13 @@ var body: some View {
 
 private func addAmount() {
     withAnimation {
-        let newItem = Item(title: title, amount: amount, transactionMode: transType.tMode, transactionOption: transType.title)
+        let newItem: Item
+        
+        if transType.tMode == .Refund {
+            newItem = Item(title: title, amount: amount, transactionMode: transType.tMode, transactionOption: transType.title, RefundAgainst: againstID)
+        } else {
+            newItem = Item(title: title, amount: amount, transactionMode: transType.tMode, transactionOption: transType.title)
+        }
         modelContext.insert(newItem)
     }
 }
