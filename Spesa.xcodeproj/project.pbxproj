@@ -13,6 +13,9 @@
 		BC97BD242C19DC39000518A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC97BD232C19DC39000518A4 /* Assets.xcassets */; };
 		BC97BD272C19DC39000518A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC97BD262C19DC39000518A4 /* Preview Assets.xcassets */; };
 		BCE623A72C205CFA00EB2707 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE623A62C205CFA00EB2707 /* PickerView.swift */; };
+		BCE99B9A2C2AF9DF00DA8E13 /* DisplayTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE99B992C2AF9DF00DA8E13 /* DisplayTransactionView.swift */; };
+		BCE99B9C2C2AFA0700DA8E13 /* DisplayAllTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE99B9B2C2AFA0700DA8E13 /* DisplayAllTransactionView.swift */; };
+		BCE99B9E2C2AFA4500DA8E13 /* AddRefund.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE99B9D2C2AFA4500DA8E13 /* AddRefund.swift */; };
 		BCFD03ED2C1DE21100E8203D /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFD03EC2C1DE21100E8203D /* AddTransactionView.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +27,9 @@
 		BC97BD232C19DC39000518A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC97BD262C19DC39000518A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCE623A62C205CFA00EB2707 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		BCE99B992C2AF9DF00DA8E13 /* DisplayTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayTransactionView.swift; sourceTree = "<group>"; };
+		BCE99B9B2C2AFA0700DA8E13 /* DisplayAllTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAllTransactionView.swift; sourceTree = "<group>"; };
+		BCE99B9D2C2AFA4500DA8E13 /* AddRefund.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRefund.swift; sourceTree = "<group>"; };
 		BCFD03EC2C1DE21100E8203D /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,9 +67,12 @@
 				BC97BD1F2C19DC38000518A4 /* SpesaView.swift */,
 				BCFD03EC2C1DE21100E8203D /* AddTransactionView.swift */,
 				BCE623A62C205CFA00EB2707 /* PickerView.swift */,
+				BCE99B992C2AF9DF00DA8E13 /* DisplayTransactionView.swift */,
+				BCE99B9B2C2AFA0700DA8E13 /* DisplayAllTransactionView.swift */,
 				BC97BD212C19DC38000518A4 /* Item.swift */,
 				BC97BD232C19DC39000518A4 /* Assets.xcassets */,
 				BC97BD252C19DC39000518A4 /* Preview Content */,
+				BCE99B9D2C2AFA4500DA8E13 /* AddRefund.swift */,
 			);
 			path = Spesa;
 			sourceTree = "<group>";
@@ -150,7 +159,10 @@
 				BCFD03ED2C1DE21100E8203D /* AddTransactionView.swift in Sources */,
 				BC97BD222C19DC38000518A4 /* Item.swift in Sources */,
 				BCE623A72C205CFA00EB2707 /* PickerView.swift in Sources */,
+				BCE99B9A2C2AF9DF00DA8E13 /* DisplayTransactionView.swift in Sources */,
 				BC97BD1E2C19DC38000518A4 /* SpesaApp.swift in Sources */,
+				BCE99B9C2C2AFA0700DA8E13 /* DisplayAllTransactionView.swift in Sources */,
+				BCE99B9E2C2AFA4500DA8E13 /* AddRefund.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
